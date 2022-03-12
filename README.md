@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Make Lever-Jobs Great Again (MLGA)
+
+
+This is a react app that you can embed anywhere basically. Fork it, replace the username, host it on github pages, and go have fun!
+
+###What it looks like
+![All Fancy Lever Job](/Screenshot.png?raw=true "MLGA in Action")
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
