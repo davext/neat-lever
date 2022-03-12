@@ -31,7 +31,7 @@ export default function Lever(props) {
 
                             return (<div key={postingIndex} style=
                                 {{
-                                    backgroundColor: "#333", borderRadius: "4rem",
+                                    backgroundColor: "#222", borderRadius: "4rem",
                                     padding: "1rem 3rem 1rem 3rem",
                                     margin: "1rem 0 1rem 0"
                                 }}>
