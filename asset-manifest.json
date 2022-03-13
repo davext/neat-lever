@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/btc-lever/static/css/main.12c8db8d.css",
+    "main.js": "/btc-lever/static/js/main.428b3266.js",
+    "static/js/787.e1d75f64.chunk.js": "/btc-lever/static/js/787.e1d75f64.chunk.js",
+    "index.html": "/btc-lever/index.html",
+    "main.12c8db8d.css.map": "/btc-lever/static/css/main.12c8db8d.css.map",
+    "main.428b3266.js.map": "/btc-lever/static/js/main.428b3266.js.map",
+    "787.e1d75f64.chunk.js.map": "/btc-lever/static/js/787.e1d75f64.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.12c8db8d.css",
+    "static/js/main.428b3266.js"
+  ]
+}
