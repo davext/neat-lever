@@ -16,7 +16,7 @@ export default function Lever(props) {
                 console.log(response.data)
             })
 
-    })
+    },[props.username])
 
 
 
