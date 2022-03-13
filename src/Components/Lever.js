@@ -16,7 +16,7 @@ export default function Lever(props) {
                 console.log(response.data)
             })
 
-    }, [])
+    })
 
 
 
@@ -53,7 +53,7 @@ export default function Lever(props) {
                                     {posting.descriptionPlain}
                                 </p>
 
-                                <a href={posting.hostedUrl + `?utm_source=${window.location}`} style={{  textDecoration:"none"}} target="_blank"><div style={{
+                                <a href={posting.hostedUrl + `?utm_source=${window.location}`} style={{  textDecoration:"none"}} target="_blank" rel="noreferrer"><div style={{
                                     backgroundColor: "#fff", color: "hotpink", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold", marginBottom:"2rem",
                                     textTransform: "uppercase", textAlign: "center",
                                 }}>Apply Today</div></a>
