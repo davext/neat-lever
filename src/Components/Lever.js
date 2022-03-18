@@ -40,7 +40,7 @@ export default function Lever(props) {
 
                             {Object.values(posting.categories).map((categoryValue, categoryIndex) => {
                                 return (<div key={categoryIndex} style={{
-                                    backgroundColor: "#fff", color: "hotpink", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold",
+                                    backgroundColor: "#fff", color: "#F79504", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold",
                                     textTransform: "uppercase"
                                 }}>{categoryValue}</div>)
 
