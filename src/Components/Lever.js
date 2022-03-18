@@ -16,7 +16,7 @@ export default function Lever(props) {
                 console.log(response.data)
             })
 
-    },[props.username])
+    }, [props.username])
 
 
 
@@ -27,42 +27,56 @@ export default function Lever(props) {
 
             {teamPostings.map((team, teamIndex) => {
 
-                    return team.postings.map((posting, postingIndex) => {
+                return team.postings.map((posting, postingIndex) => {
 
-                            return (<div key={postingIndex} style=
-                                {{
-                                    backgroundColor: "#000", borderRadius: "4rem",
-                                    padding: "1rem 3rem 1rem 3rem",
-                                    margin: "1rem 0 1rem 0"
-                                }}>
-                                <h2 style={{ fontSize: "3rem", color: "#fff", marginBottom: "1rem" }}>
-                                        {posting.text}</h2>
-                                <div style={{ display: "flex", gap: "2rem" }}>
+                    return (<div key={postingIndex} style=
+                        {{
+                            backgroundColor: "#000", borderRadius: "4rem",
+                            padding: "1rem 3rem 1rem 3rem",
+                            margin: "1rem 0 1rem 0"
+                        }}>
+                        <h2 style={{ fontSize: "3rem", color: "#fff", marginBottom: "1rem" }}>
+                            {posting.text}</h2>
+                        <div style={{ display: "flex", gap: "2rem", flexWrap:"wrap" }}>
 
-                                    {Object.values(posting.categories).map((categoryValue,categoryIndex)=>{
-                                        return (<div key={categoryIndex} style={{
-                                            backgroundColor: "#fff", color: "hotpink", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold",
-                                            textTransform: "uppercase"
-                                        }}>{categoryValue}</div>)
-    
-                                    })}
-                               
+                            {Object.values(posting.categories).map((categoryValue, categoryIndex) => {
+                                return (<div key={categoryIndex} style={{
+                                    backgroundColor: "#fff", color: "hotpink", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold",
+                                    textTransform: "uppercase"
+                                }}>{categoryValue}</div>)
 
-                                </div>
-                                <p style={{ color: "white", padding: "2rem 0 2rem 0",lineHeight:"1.5rem" }}>
-                                    {posting.descriptionPlain}
-                                </p>
+                            })}
+                        </div>
+                        <div
 
-                                <a href={posting.hostedUrl + `?utm_source=${window.location}`} style={{  textDecoration:"none"}} target="_blank" rel="noreferrer"><div style={{
-                                    backgroundColor: "#fff", color: "hotpink", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold", marginBottom:"2rem",
-                                    textTransform: "uppercase", textAlign: "center",
-                                }}>Apply Today</div></a>
+                            style={{
+                                width: "100%",
+                                padding: "2rem 0 2rem 0"
+                              
+                              
+                            }}>
+                            <p style={{
+                                overflow:"hidden",
+                                display: "-webkit-box",
+                                "-webkit-line-clamp": "7",
+                                "-webkit-box-orient": "vertical",
+                                textOverflow : "ellipsis",
+                                color: "white"}}>
+                                {posting.descriptionPlain} 
+                            </p>
+                        </div>
 
 
-                            </div>)
+                        <a href={posting.hostedUrl + `?utm_source=${window.location}`} style={{ textDecoration: "none" }} target="_blank" rel="noreferrer"><div style={{
+                            backgroundColor: "#fff", color: "hotpink", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold", marginBottom: "2rem",
+                            textTransform: "uppercase", textAlign: "center",
+                        }}>Learn More</div></a>
 
 
-                        })
+                    </div>)
+
+
+                })
 
             })}
 
