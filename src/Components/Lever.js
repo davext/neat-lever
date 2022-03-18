@@ -29,15 +29,14 @@ export default function Lever(props) {
 
                 return team.postings.map((posting, postingIndex) => {
 
-                    return (<div key={postingIndex} style=
-                        {{
-                            backgroundColor: "#000", borderRadius: "4rem",
-                            padding: "1rem 3rem 1rem 3rem",
-                            margin: "1rem 0 1rem 0"
-                        }}>
+                    return (<div key={postingIndex} style={{
+                        backgroundColor: "#000", borderRadius: "4rem",
+                        padding: "1rem 3rem 1rem 3rem",
+                        margin: "1rem 0 1rem 0"
+                    }}>
                         <h2 style={{ fontSize: "3rem", color: "#fff", marginBottom: "1rem" }}>
                             {posting.text}</h2>
-                        <div style={{ display: "flex", gap: "2rem", flexWrap:"wrap" }}>
+                        <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
 
                             {Object.values(posting.categories).map((categoryValue, categoryIndex) => {
                                 return (<div key={categoryIndex} style={{
@@ -52,17 +51,18 @@ export default function Lever(props) {
                             style={{
                                 width: "100%",
                                 padding: "2rem 0 2rem 0"
-                              
-                              
+
+
                             }}>
                             <p style={{
-                                overflow:"hidden",
+                                overflow: "hidden",
                                 display: "-webkit-box",
                                 "-webkit-line-clamp": "7",
                                 "-webkit-box-orient": "vertical",
-                                textOverflow : "ellipsis",
-                                color: "white"}}>
-                                {posting.descriptionPlain} 
+                                textOverflow: "ellipsis",
+                                color: "white"
+                            }}>
+                                {posting.descriptionPlain}
                             </p>
                         </div>
 
