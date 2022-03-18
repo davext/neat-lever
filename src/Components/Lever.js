@@ -40,7 +40,7 @@ export default function Lever(props) {
 
                             {Object.values(posting.categories).map((categoryValue, categoryIndex) => {
                                 return (<div key={categoryIndex} style={{
-                                    backgroundColor: "#fff", color: "#F79504", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold",
+                                    backgroundColor: "#fff", color: "#333", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold",
                                     textTransform: "uppercase"
                                 }}>{categoryValue}</div>)
 
@@ -68,7 +68,7 @@ export default function Lever(props) {
 
 
                         <a href={posting.hostedUrl + `?utm_source=${window.location}`} style={{ textDecoration: "none" }} target="_blank" rel="noreferrer"><div style={{
-                            backgroundColor: "#fff", color: "#F79504", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold", marginBottom: "2rem",
+                            backgroundColor: "#fff", color: "#333", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold", marginBottom: "2rem",
                             textTransform: "uppercase", textAlign: "center",
                         }}>Learn More</div></a>
 
