@@ -16,7 +16,7 @@ export default function Lever(props) {
         if(usr)
             return setUsername(usr)
 
-    })
+    },[urlParams])
 
 
     useEffect(() => {
