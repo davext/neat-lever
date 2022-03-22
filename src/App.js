@@ -4,7 +4,7 @@ import Lever from "./Components/Lever";
 function App() {
   return (
     <div className="App">
-      <Lever username={"btc"}/>
+      <Lever/>
     </div>
   );
 }

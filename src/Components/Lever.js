@@ -7,16 +7,28 @@ export default function Lever(props) {
     const [teamPostings, setTeamPostings] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const [userName, setUsername] = useState("btc");
+
+    const urlParams = window.location.search;
+
+    useEffect(()=>{
+        const usr = new URLSearchParams(urlParams).get("username")
+        if(usr)
+            return setUsername(usr)
+
+    })
+
+
     useEffect(() => {
 
-        return axios.get(`https://api.lever.co/v0/postings/${props.username}?group=team&mode=json`)
+        return axios.get(`https://api.lever.co/v0/postings/${userName}?group=team&mode=json`)
             .then((response) => {
                 setLoading(false)
                 setTeamPostings(response.data)
                 console.log(response.data)
             })
 
-    }, [props.username])
+    }, [userName])
 
 
 
