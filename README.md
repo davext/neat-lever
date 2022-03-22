@@ -50,3 +50,8 @@ Usually works right away. Try clearning your cache. If not look for the logs in 
 
 ### What it looks like
 ![All Fancy Lever Job](/Screenshot.png?raw=true "MLGA in Action")
+
+
+## Want to support the development of this project?
+https://paypal.me/driftgears
+
