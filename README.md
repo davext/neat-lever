@@ -1,78 +1,52 @@
 # Make Lever-Jobs Great Again (MLGA)
 
 
-This is a react app that you can embed anywhere basically. Fork it, replace the username, host it on github pages, and go have fun!
+This is a react app that you can iframe/embed anywhere basically.
+
+### How To Use:
+
+1. Find the Lever page that contains job positngs like (https://jobs.lever.co/leverdemo)
+2. Use the username of the company `leverdemo` in the url to create the page 
+  
+  `https://davext.github.io/neat-lever?username=leverdemo` <-- notice the username 
+
+3. Embed anywhere with this tag.
+
+```
+<iframe id="neat-lever"  src="https://davext.github.io/neat-lever?username=leverdemo"> </iframe>
+```
+
+You can use it anywhere that supports HTML input. Wordpress, Wix, Squarespace, Webflow, and more!
+
+4. Bonus: if you'd like to have the iFrame height to auto resize based on how many jobs the page has, then add this to your website's head
+
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js" ></script>
+```
+
+and add this after the iFrame code:
+
+
+```
+<script>
+  iFrameResize({ log: true, checkOrigin: false }, '#neat-lever')
+</script>	
+```
+
+
+### Troubleshoot
+
+* It's not loading the jobs and it's defaulting to "btc" username:
+
+
+Try looking in the browser console, you probably have the username incorrect.
+
+
+* iFrame resizing is not working
+
+Usually works right away. Try clearning your cache. If not look for the logs in the console
+
+
 
 ### What it looks like
 ![All Fancy Lever Job](/Screenshot.png?raw=true "MLGA in Action")
-
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
