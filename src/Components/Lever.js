@@ -9,7 +9,7 @@ export default function Lever(props) {
     const [userName, setUsername] = useState("");
     const [error, setError] = useState(false);
 
-    const [settings, setSettings] = useState({})
+    // const [settings, setSettings] = useState({})
 
     const urlParams = window.location.search;
 
@@ -55,7 +55,7 @@ export default function Lever(props) {
                     }}>
                         <h2 style={{ fontSize: "3rem", color: "#fff", marginBottom: "1rem" }}>
                             {posting.text}</h2>
-                        <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
+                        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
 
                             {Object.values(posting.categories).map((categoryValue, categoryIndex) => {
                                 return (<div key={categoryIndex} style={{
