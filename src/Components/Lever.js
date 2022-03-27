@@ -6,27 +6,34 @@ export default function Lever(props) {
 
     const [teamPostings, setTeamPostings] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [userName, setUsername] = useState("");
+    const [error, setError] = useState(false);
 
-    const [userName, setUsername] = useState("btc");
+    const [settings, setSettings] = useState({})
 
     const urlParams = window.location.search;
 
-    useEffect(()=>{
+    useEffect(() => {
         const usr = new URLSearchParams(urlParams).get("username")
-        if(usr)
+        if (usr)
             return setUsername(usr)
+        else
+            return setUsername("btc")
 
-    },[urlParams])
+    }, [urlParams])
 
 
     useEffect(() => {
-
-        return axios.get(`https://api.lever.co/v0/postings/${userName}?group=team&mode=json`)
-            .then((response) => {
-                setLoading(false)
-                setTeamPostings(response.data)
-                console.log(response.data)
-            })
+        if (userName)
+            return axios.get(`https://api.lever.co/v0/postings/${userName}?group=team&mode=json`)
+                .then((response) => {
+                    setLoading(false)
+                    setTeamPostings(response.data)
+                    console.log(response.data)
+                }).catch(() => {
+                    setLoading(false)
+                    setError(true)
+                })
 
     }, [userName])
 
@@ -52,9 +59,20 @@ export default function Lever(props) {
 
                             {Object.values(posting.categories).map((categoryValue, categoryIndex) => {
                                 return (<div key={categoryIndex} style={{
-                                    backgroundColor: "#fff", color: "#333", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold",
+
+
+
+                                    backgroundColor: "#fff", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold",
                                     textTransform: "uppercase"
-                                }}>{categoryValue}</div>)
+                                }}><div
+
+                                    style={{
+                                        // background: "linear-gradient(to right, #30CFD0, #c43ad6)",
+                                        background: "linear-gradient(90deg, hsla(35, 100%, 50%, 1) 0%, hsla(17, 60%, 56%, 1) 67%, hsla(286, 44%, 49%, 1) 100%)",
+                                        WebkitBackgroundClip: "text",
+                                        WebkitTextFillColor: "transparent"
+                                    }}
+                                >{categoryValue}</div></div>)
 
                             })}
                         </div>
@@ -62,22 +80,27 @@ export default function Lever(props) {
 
                             style={{
                                 width: "100%",
-                                padding: "2rem 0 2rem 0"
+                                padding: "2rem 0 2rem 0",
+                                color:"white"
 
 
                             }}>
-                            <p style={{
-                                overflow: "hidden",
-                                display: "-webkit-box",
-                                "-webkit-line-clamp": "7",
-                                "-webkit-box-orient": "vertical",
-                                textOverflow: "ellipsis",
-                                color: "white"
-                            }}>
-                                {posting.descriptionPlain}
-                            </p>
+                            <div
+                                dangerouslySetInnerHTML={{ "__html": posting.description }}
+                                style={{
+                                    overflow: "hidden",
+                                    display: "-webkit-box",
+                                    WebkitLineClamp : "4",
+                                    WebkitBoxOrient : "vertical",
+                                    textOverflow: "ellipsis",
+                                }}>
+                                {/* {posting.descriptionPlain} */}
+                            </div>
+                            <h2>{posting?.lists[0]?.text}</h2>
+                            <div 
+                            dangerouslySetInnerHTML={{"__html" : posting?.lists[0]?.content}}>
+                            </div>
                         </div>
-
 
                         <a href={posting.hostedUrl + `?utm_source=${window.location}`} style={{ textDecoration: "none" }} target="_blank" rel="noreferrer"><div style={{
                             backgroundColor: "#fff", color: "#333", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold", marginBottom: "2rem",
@@ -91,6 +114,8 @@ export default function Lever(props) {
                 })
 
             })}
+
+            {error && <h2>Error loading {userName} try a different <a href="/?username=leverdemo">username</a></h2>}
 
 
         </div>
