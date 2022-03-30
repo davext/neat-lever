@@ -52,6 +52,7 @@ export default function Lever(props) {
                         backgroundColor: "#000", borderRadius: "4rem",
                         padding: "1rem 3rem 1rem 3rem",
                         margin: "1rem 0 1rem 0"
+                        
                     }}>
                         <h2 style={{ fontSize: "3rem", color: "#fff", marginBottom: "1rem" }}>
                             {posting.text}</h2>
@@ -68,6 +69,7 @@ export default function Lever(props) {
 
                                     style={{
                                         // background: "linear-gradient(to right, #30CFD0, #c43ad6)",
+                                        
                                         background: "linear-gradient(90deg, hsla(35, 100%, 50%, 1) 0%, hsla(17, 60%, 56%, 1) 67%, hsla(286, 44%, 49%, 1) 100%)",
                                         WebkitBackgroundClip: "text",
                                         WebkitTextFillColor: "transparent"
@@ -81,8 +83,7 @@ export default function Lever(props) {
                             style={{
                                 width: "100%",
                                 padding: "2rem 0 2rem 0",
-                                color: "white"
-
+                                color: "white",
 
                             }}>
                             <div
@@ -94,11 +95,15 @@ export default function Lever(props) {
                                     WebkitLineClamp: "4",
                                     WebkitBoxOrient: "vertical",
                                     textOverflow: "ellipsis",
+                                    
                                 }}>
                                 {/* {posting.descriptionPlain} */}
                             </div>
                             <h2>{posting?.lists[0]?.text}</h2>
                             <div
+                            style={{
+                                fontSize : "1.3rem",
+                            }}
                                 dangerouslySetInnerHTML={{ "__html": posting?.lists[0]?.content }}>
                             </div>
                         </div>
