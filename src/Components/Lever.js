@@ -81,7 +81,7 @@ export default function Lever(props) {
                             style={{
                                 width: "100%",
                                 padding: "2rem 0 2rem 0",
-                                color:"white"
+                                color: "white"
 
 
                             }}>
@@ -89,23 +89,40 @@ export default function Lever(props) {
                                 dangerouslySetInnerHTML={{ "__html": posting.description }}
                                 style={{
                                     overflow: "hidden",
+                                    maxHeight: "5rem",
                                     display: "-webkit-box",
-                                    WebkitLineClamp : "4",
-                                    WebkitBoxOrient : "vertical",
+                                    WebkitLineClamp: "4",
+                                    WebkitBoxOrient: "vertical",
                                     textOverflow: "ellipsis",
                                 }}>
                                 {/* {posting.descriptionPlain} */}
                             </div>
                             <h2>{posting?.lists[0]?.text}</h2>
-                            <div 
-                            dangerouslySetInnerHTML={{"__html" : posting?.lists[0]?.content}}>
+                            <div
+                                dangerouslySetInnerHTML={{ "__html": posting?.lists[0]?.content }}>
                             </div>
                         </div>
 
-                        <a href={posting.hostedUrl + `?utm_source=${window.location}`} style={{ textDecoration: "none" }} target="_blank" rel="noreferrer"><div style={{
-                            backgroundColor: "#fff", color: "#333", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold", marginBottom: "2rem",
-                            textTransform: "uppercase", textAlign: "center",
-                        }}>Learn More</div></a>
+                        <a href={posting.hostedUrl + `?utm_source=${window.location}`} style={{ textDecoration: "none" }} target="_blank" rel="noreferrer">
+
+                            <div
+                                style={{
+                                    backgroundColor: "#fff", padding: ".5rem 2rem .5rem 2rem", borderRadius: "1rem", fontWeight: "bold", marginBottom: "2rem",
+                                    textTransform: "uppercase", textAlign: "center"
+                                }}>
+                                    <div
+                                    
+                                    style={{
+                                        // background: "linear-gradient(to right, #30CFD0, #c43ad6)",
+                                        background: "linear-gradient(90deg, hsla(35, 100%, 50%, 1) 0%, hsla(17, 60%, 56%, 1) 67%, hsla(286, 44%, 49%, 1) 100%)",
+                                        WebkitBackgroundClip: "text",
+                                        WebkitTextFillColor: "transparent"
+                                    }}>
+                                        Learn More
+                                    </div>
+                               
+                            </div>
+                        </a>
 
 
                     </div>)
