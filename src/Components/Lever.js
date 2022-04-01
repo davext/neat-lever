@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import HTMLEllipsis from 'react-lines-ellipsis/lib/html'
+
 
 export default function Lever(props) {
 
@@ -84,21 +86,15 @@ export default function Lever(props) {
                                 width: "100%",
                                 padding: "2rem 0 2rem 0",
                                 color: "white",
-
                             }}>
-                            <div
-                                dangerouslySetInnerHTML={{ "__html": posting.description }}
-                                style={{
-                                    overflow: "hidden",
-                                    maxHeight: "5rem",
-                                    display: "-webkit-box",
-                                    WebkitLineClamp: "4",
-                                    WebkitBoxOrient: "vertical",
-                                    textOverflow: "ellipsis",
-                                    
-                                }}>
-                                {/* {posting.descriptionPlain} */}
-                            </div>
+                                
+                            <HTMLEllipsis
+                            unsafeHTML={posting.description}
+                            maxLine='5'
+                            ellipsis='...'
+                            basedOn='letters'
+                            />
+
                             <h2>{posting?.lists[0]?.text}</h2>
                             <div
                             style={{
