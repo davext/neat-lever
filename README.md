@@ -1,5 +1,5 @@
 # Make Lever-Jobs Great Again (MLGA)
-
+![All Fancy Lever Job](/Screenshot.png?raw=true "MLGA in Action")
 
 This is a react app that you can iframe/embed anywhere basically.
 
@@ -47,9 +47,6 @@ Try looking in the browser console, you probably have the username incorrect.
 Usually works right away. Try clearning your cache. If not look for the logs in the console
 
 
-
-### What it looks like
-![All Fancy Lever Job](/Screenshot.png?raw=true "MLGA in Action")
 
 
 ## Want to support the development of this project?
